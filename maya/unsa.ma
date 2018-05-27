@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: unsa.ma
-//Last modified: Mon, May 28, 2018 12:29:21 AM
+//Last modified: Mon, May 28, 2018 12:36:11 AM
 //Codeset: UTF-8
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -77,8 +77,6 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode transform -n "pSphere1";
 	rename -uid "04B61848-D942-86C4-7D94-E2A5F8DE377E";
-	setAttr ".t" -type "double3" 0 0 0 ;
-	setAttr -av ".tx";
 createNode mesh -n "pSphereShape1" -p "pSphere1";
 	rename -uid "987E367F-F14D-26C9-4A42-9A94683B56E1";
 	setAttr -k off ".v";
@@ -161,13 +159,14 @@ createNode animCurveTL -n "pSphere1_translateX";
 	rename -uid "3B6FD925-FB45-DBFF-03BB-A5AD87B1C109";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 50 9.0193139897148864 60 0 70 0 90 6.6308882523046027
-		 100 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 50 9.0193139897148864 60 0 70 0 90 6.6308882523046027
+		 100 0 105 -3.3738036824550246 110 0.71697845551921713 115 3.2725596622475344 120 0;
 createNode animCurveTL -n "pSphere1_translateY";
 	rename -uid "6C3FC68C-994B-38D0-5A3D-D99D78731C6E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 50 9.5150125006643194 60 0 70 0;
+	setAttr -s 8 ".ktv[0:7]"  1 0 50 9.5150125006643194 60 0 70 0 105 2.0294705679919698
+		 110 4.9232143404689053 115 2.9443757602467597 120 0;
 createNode animCurveTL -n "pSphere1_translateZ";
 	rename -uid "BC04400F-A34E-17C2-30BC-CF8B2FE3409A";
 	setAttr ".tan" 18;
@@ -210,8 +209,8 @@ createNode animCurveTU -n "pSphere1_scaleZ";
 	setAttr ".wgt" no;
 	setAttr -s 4 ".ktv[0:3]"  1 1 50 1 60 1 70 1;
 select -ne :time1;
-	setAttr ".o" 100;
-	setAttr ".unw" 100;
+	setAttr ".o" 120;
+	setAttr ".unw" 120;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
