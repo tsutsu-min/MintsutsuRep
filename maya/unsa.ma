@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: unsa.ma
-//Last modified: Mon, May 28, 2018 12:16:52 AM
+//Last modified: Mon, May 28, 2018 12:22:10 AM
 //Codeset: UTF-8
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,13 +13,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "63F276B7-9D40-9487-7681-469348FD620E";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 20.346215199579721 15.259661399684772 20.346215199579699 ;
+	setAttr ".t" -type "double3" 16.256863515505525 12.192647636629133 16.256863515505501 ;
 	setAttr ".r" -type "double3" -27.938352729602379 44.999999999999972 -5.172681101354183e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "95C31A97-C141-41D6-CC38-13B9785BDD86";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 32.569835921113253;
+	setAttr ".coi" 26.023679200192571;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -77,16 +77,19 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode transform -n "pSphere1";
 	rename -uid "04B61848-D942-86C4-7D94-E2A5F8DE377E";
+	setAttr ".t" -type "double3" 7.8380835417129244 0 0 ;
 createNode mesh -n "pSphereShape1" -p "pSphere1";
 	rename -uid "987E367F-F14D-26C9-4A42-9A94683B56E1";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.65000009536743164 0.65000009536743164 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".pt[253]" -type "float3"  0 0 2.9186704;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "FBDAD115-F945-E0D9-4AF9-08A10001B61B";
